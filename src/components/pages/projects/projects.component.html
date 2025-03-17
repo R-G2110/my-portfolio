@@ -1,0 +1,13 @@
+
+<div id="projects" class="section">
+  <h1 class="title">Projects</h1>
+  <p class="sub-title">This is a collection of my projects. Check 'em out!</p>
+  <div class="projects-grid">
+    <div class="item" *ngFor="let project of projects">
+      <a [href]="project.link" target="_blank">
+        <img [src]="project.path" [alt]="project.name">
+        <h5>{{ project.name }}</h5>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+main {
+  padding-top: 60px;
+  min-height: 100vh;
+  background-color: var(--color-white);
+
+  .container-sm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+}

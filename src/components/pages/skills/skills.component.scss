@@ -1,0 +1,36 @@
+#skills {
+  .skills-content {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 50px;
+
+    .item {
+      max-width: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.5s ease;
+
+      img {
+        width: 100%;
+        max-width: 100px;
+        height: auto;
+        transition: all 0.5s ease;
+      }
+
+      p {
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        color: var(--accent-color);
+      }
+
+      // Effetto hover
+      &:hover img{
+        transform: scale(1.15);
+
+      }
+    }
+  }
+}

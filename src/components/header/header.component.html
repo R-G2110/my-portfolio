@@ -1,0 +1,30 @@
+<header class="header">
+  <nav class="container">
+    <!-- Logo Link -->
+    <a routerLink="/" class="logo">Portfolio</a>
+
+    <!-- Desktop Menu -->
+    <ul class="nav-links">
+      <li *ngFor="let item of navItems">
+        <a [routerLink]="item.href" routerLinkActive="active" class="nav-item">{{ item.label }}</a>
+      </li>
+    </ul>
+
+    <!-- Mobile Menu Button -->
+    <button class="menu-button" (click)="toggleMobileMenu()">
+      <i *ngIf="!mobileMenuOpen" class="fa-solid fa-bars menu-icon"></i>
+      <i *ngIf="mobileMenuOpen" class="menu-icon">✖</i>
+    </button>
+
+    <!-- Mobile Menu -->
+    <div *ngIf="mobileMenuOpen" @fadeInOut class="mobile-menu">
+      <ul>
+        <li *ngFor="let item of navItems">
+          <a [routerLink]="item.href" routerLinkActive="active" class="mobile-nav-item" (click)="toggleMobileMenu()">
+            {{ item.label }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

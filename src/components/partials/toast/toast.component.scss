@@ -1,0 +1,41 @@
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--color-white);
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  animation: fadeInOut 3s forwards;
+}
+
+/* Stile per il successo: colore verde */
+.toast.success {
+  background-color: var(--color-green-dark); // verde
+}
+
+/* Stile per l'errore: colore rosso */
+.toast.error {
+  background-color: var(--color-red); // rosso
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+}

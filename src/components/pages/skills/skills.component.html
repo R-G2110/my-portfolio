@@ -1,0 +1,10 @@
+<div id="skills" class="section">
+  <h1 class="title">Skills</h1>
+  <p class="sub-title">These are the technologies I usually use:</p>
+  <div class="skills-content">
+    <div class="item" *ngFor="let skill of skills">
+      <img [src]="skill.path" [alt]="skill.name">
+      <p>{{ skill.name }}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+#projects {
+  overflow-y: auto;
+  .projects-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    .item {
+      width: 350px;
+      height: 220px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      border: var(--border-width) solid var(--color-gray-light);
+      transition: all 0.5s ease-in-out;
+
+      a {
+        transition: all 0.5s ease;
+
+        &:hover img {
+          scale: 1.03;
+          border: var(--border-width) solid var(--color-green-dark);
+        }
+        &:hover h5 {
+          color: var(--color-green-dark);
+        }
+
+        img {
+          margin-bottom: 10px;
+          transition: all 0.5s ease;
+        }
+
+        h5 {
+          text-transform: capitalize;
+          transition: all 0.5s ease-in-out;
+        }
+      }
+
+    }
+  }
+}

@@ -1,0 +1,39 @@
+<div class="trapdoor">
+  <div class="top door"></div>
+  <div class="bottom door"></div>
+  <button type="button" class="form-button" (click)="openForm($event)">Click here</button>
+</div>
+<div class="trapdoor-form" [class.open]="isFormOpen">
+  <div class="left door-form"></div>
+  <div class="right door-form"></div>
+  <!-- Aggiungi #contactForm per ottenere il riferimento al form e novalidate per disabilitare la validazione HTML5 nativa -->
+  <form #contactForm="ngForm" class="contact-form" (ngSubmit)="sendMessage(contactForm)" novalidate>
+
+    <div class="floating-label">
+      <input type="text" id="name" name="name" placeholder=" " required [(ngModel)]="contact.name">
+      <label for="name">Your Name *</label>
+      <!-- Mostra un messaggio di errore se il campo è stato toccato e risulta non valido -->
+      <div class="error" *ngIf="contactForm.submitted && contactForm.controls['name']?.invalid">
+        Name is required. Please enter your name.
+      </div>
+    </div>
+
+    <div class="floating-label">
+      <input type="email" id="email" name="email" placeholder=" " required [(ngModel)]="contact.email">
+      <label for="email">Your Email *</label>
+      <div class="error" *ngIf="contactForm.submitted && contactForm.controls['email']?.invalid">
+        Email is required. Please enter a valid email.
+      </div>
+    </div>
+
+    <div class="floating-label">
+      <textarea id="message" name="message" placeholder=" " required [(ngModel)]="contact.message"></textarea>
+      <label for="message">Message *</label>
+      <div class="error" *ngIf="contactForm.submitted && contactForm.controls['message']?.invalid">
+        The message is required.
+      </div>
+    </div>
+
+    <button type="submit">Send</button>
+  </form>
+</div>

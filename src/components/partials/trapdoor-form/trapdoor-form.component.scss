@@ -1,0 +1,237 @@
+.trapdoor {
+  // margin-bottom: 100px;
+  -webkit-transform: translateZ(0px);
+  -webkit-font-smoothing: antialiased;
+  margin-left: 35%;
+  width: 200px;
+  height: 50px;
+  box-shadow: inset -7px 0px 12px -8px rgba(0,0,0,0.3),
+              inset 7px 0px 12px -8px rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.3);
+  transition: background 400ms ease-in-out;
+
+  &:hover {
+    background: var(--color-white);
+    .door {
+      box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.4);
+      transform: scale(1.08);
+    }
+    .top {
+      top: -50%;
+    }
+    .bottom {
+      top: 100%;
+    }
+  }
+
+  .form-button {
+    color: var(--primary-text);
+    margin-left: -85px;
+    margin-top: -20px;
+    padding: 10px 20px;
+    position: absolute !important;
+    left: 50%;
+    top: 50%;
+    transform: translate(+30%);
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: var(--border-width) solid var(--color-green-light);
+    outline-offset: -100px;
+    border: var(--border-width) solid var(--color-green-dark);
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      background-color: var(--color-green-dark);
+      color: var(--secondary-text);
+      outline-offset: 0px;
+    }
+  }
+}
+
+.top {
+  top: 0%;
+  left: 0px;
+  &:before {
+    top: 5px;
+  }
+}
+
+.bottom {
+  top: 50%;
+  left: 0px;
+  &:before {
+    top: -20px;
+  }
+}
+
+.door {
+  transition: top 400ms, box-shadow 200ms, transform 300ms;
+  transition-timing-function: ease-in-out;
+  background-color: var(--color-white);
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  z-index: 2;
+  height: 50%;
+
+  &:before {
+    position: absolute;
+    font-size: var(--font-md);
+    display: block;
+    color: var(--color-gray);
+    content: "Send me a mail";
+    width: 80%;
+    height: 20px;
+    left: 15%;
+  }
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 40px;
+  row-gap: 30px;
+
+  .floating-label:nth-child(3) {
+    grid-column: span 2;
+  }
+
+  button {
+    grid-column: span 2;
+    justify-self: center;
+  }
+}
+
+
+
+.trapdoor-form {
+  position: relative;
+  width: 600px;
+  height: 380px;
+  margin: 30px auto;
+  background: var(--color-white);
+  overflow: hidden;
+  transition: background 400ms ease-in-out;
+
+  .left,
+  .right {
+    transition: left 400ms ease-in-out;
+  }
+
+  /* Stato aperto: le porte rimangono aperte */
+  &.open {
+    .left {
+      left: -50%;
+    }
+    .right {
+      left: 100%;
+    }
+  }
+}
+
+/* Stili per le porte del form */
+.door-form {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background-color: var(--color-white);
+  transition: left 400ms ease-in-out, box-shadow 200ms, transform 300ms ease-in-out;
+  z-index: 2;
+}
+
+.left {
+  left: 0;
+}
+.right {
+  left: 50%;
+}
+
+.contact-form {
+  position: relative;
+  z-index: 1;
+  padding: 10px 20px;
+  text-align: center;
+  border-top: var(--border-width-xl) solid var(--color-green-dark);
+}
+.contact-form input,
+.contact-form textarea {
+  width: 90%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid var(--color-gray-light);
+  border-radius: 4px;
+}
+
+.floating-label {
+  position: relative;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  z-index: 100;
+}
+
+.floating-label input,
+.floating-label textarea {
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-bottom: var(--border-width) solid var(--color-gray-light);
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+}
+
+.floating-label label {
+  position: absolute;
+  left: 0;
+  top: 60%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  margin-bottom: 50px;
+
+}
+
+.floating-label .error {
+  font-size: var(--font-xs);
+  color: var(--color-red);
+  position: absolute;
+  left: 0;
+  bottom: -40px;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+
+.floating-label input:focus + label,
+.floating-label input:not(:placeholder-shown) + label,
+.floating-label textarea:focus + label,
+.floating-label textarea:not(:placeholder-shown) + label {
+  top: 10px;
+  font-weight: 700;
+  color: var(--color-green-dark);
+}
+
+textarea {
+  height: 150px;
+}
+.contact-form button {
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: var(--font-xs);
+  border: var(--border-width) solid var(--color-green);
+  background-color: var(--color-white);
+  outline: var(--border-width) solid var(--color-green-light);
+  outline-offset: -150px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.contact-form button:hover {
+  color: var(--secondary-text);
+  background-color: var(--color-green-dark);
+  outline-offset: 0px;
+  // outline: var(--border-width) solid var(--primary-color-light);
+}
