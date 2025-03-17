@@ -1,10 +1,12 @@
 import { Component, AfterViewInit, ElementRef, ViewChild, Inject, PLATFORM_ID } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { TYPED_STRINGS } from '../../../data/constants';
 
 @Component({
   selector: 'app-home',
   standalone: true,
+  imports: [RouterModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })

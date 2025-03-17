@@ -1,7 +1,7 @@
 #not-found {
   font-family: "Monoton", sans-serif;
   text-align: center;
-  color: var(--primary-color-dark);
+  color: var(--color-green-dark);
 
   h1 {
     font-size: 10rem;
@@ -14,21 +14,21 @@
   button {
     margin: 50px auto;
     padding: 15px 30px;
-    color: var(--primary-color-dark);
+    color: var(--color-gray);
     background-color: var(--color-white);
     cursor: pointer;
     font-weight: 600;
     text-transform: capitalize;
-    outline: var(--border-width) solid var(--primary-color-light);
+    outline: var(--border-width) solid var(--color-green-light);
     outline-offset: -150px;
     border-radius: 50px;
-    border: var(--border-width) solid var(--primary-color);
+    border: var(--border-width) solid var(--color-green-dark);
     transition: all 0.5s ease;
 
     &:hover {
       color: var(--color-white);
       outline-offset: 0px;
-      background-color: var(--primary-color-dark);
+      background-color: var(--color-green-dark);
     }
   }
 }
