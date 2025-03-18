@@ -153,6 +153,7 @@ form {
   z-index: 1;
   padding: 10px 20px;
   text-align: center;
+  border: var(--border-width) solid var(--color-green-dark);
   border-top: var(--border-width-xl) solid var(--color-green-dark);
 }
 .contact-form input,
@@ -189,7 +190,7 @@ form {
   transform: translateY(-50%);
   transition: all 0.3s ease;
   pointer-events: none;
-  margin-bottom: 50px;
+  // margin-bottom: 50px;
 
 }
 
@@ -233,5 +234,4 @@ textarea {
   color: var(--secondary-text);
   background-color: var(--color-green-dark);
   outline-offset: 0px;
-  // outline: var(--border-width) solid var(--primary-color-light);
 }
