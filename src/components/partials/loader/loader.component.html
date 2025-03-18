@@ -1,0 +1,8 @@
+
+<div class="loader">
+  <div
+    *ngFor="let color of ballColors; let i = index"
+    class="ball"
+    [ngStyle]="{'background-color': color, 'animation-delay': (i * 0.1) + 's'}">
+  </div>
+</div>

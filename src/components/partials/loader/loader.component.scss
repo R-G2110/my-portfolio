@@ -1,0 +1,33 @@
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 9999;
+}
+
+
+.ball {
+  width: 21px;
+  height: 21px;
+  margin-right: 21px;
+  border-radius: 50%;
+  animation: pulse 1.3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25%, 75% {
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+}
