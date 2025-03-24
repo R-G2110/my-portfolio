@@ -1,4 +1,5 @@
 export const PROJECTS = [
+  { name: 'bee site', link: 'https://rg-bee-site.netlify.app/', path: '/assets/images/bee-site.png' },
   { name: 'screenflix', link: 'https://rg-screenflix.netlify.app/', path: '/assets/images/screenflix.png' },
   { name: 'r-g logistics', link: 'https://rg-logistics.netlify.app/', path: '/assets/images/rg logistics.png' },
 ];
